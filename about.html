@@ -1,22 +1,32 @@
 <!--
   about.html
-  Purpose: About page describing the student, background, and academic interests.
-  Includes site navigation and a placeholder main section.
+  Purpose: Detailed About Me page for the Student Portfolio. This file is
+  semantic HTML only and provides structured sections for educational
+  background, career aspirations, technical skills, and personal interests.
+  Styling is provided via the external stylesheet at css/style.css.
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Student Portfolio - About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me | Simon Agboji</title>
+  <!-- Link to external stylesheet (no CSS here) -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Header: same structure as index.html for consistency -->
   <header>
-    <nav>
+    <div>
+      <h1>Simon Agboji</h1>
+      <p>Computer Science Student | .NET Backend Developer</p>
+      <p>Miva Open University</p>
+    </div>
+
+    <nav aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="planner.html">Planner</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -25,12 +35,156 @@
   </header>
 
   <main>
-    <h1>About</h1>
-    <p>Placeholder for student bio, academic background, and goals.</p>
+    <!-- Educational Background -->
+    <section id="education" aria-labelledby="education-heading">
+      <h2 id="education-heading">Educational Background</h2>
+
+      <article>
+        <p><strong>Institution:</strong> Miva Open University</p>
+        <p><strong>Degree:</strong> Bachelor of Science in Computer Science</p>
+        <p><strong>Status:</strong> Currently enrolled as an undergraduate student</p>
+
+        <p>Simon chose Computer Science because of his deep interest in how software systems are designed and how they scale, with a particular pull toward backend architecture and enterprise-grade applications. Alongside his degree at Miva Open University, Simon is also completing a Diploma in Software Engineering at Zibeh Institute of Technology (ZIT), with an expected graduation date of September 2026 — a programme he started in 2024 that has given him strong practical grounding in software development principles and engineering discipline.</p>
+      </article>
+
+      <table>
+        <caption>Degree and programme details</caption>
+        <thead>
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Detail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Degree</th>
+            <td>B.Sc. Computer Science</td>
+          </tr>
+          <tr>
+            <th scope="row">Institution</th>
+            <td>Miva Open University</td>
+          </tr>
+          <tr>
+            <th scope="row">Status</th>
+            <td>Undergraduate (In Progress)</td>
+          </tr>
+          <tr>
+            <th scope="row">Focus Area</th>
+            <td>Backend Development, Enterprise Software</td>
+          </tr>
+          <tr>
+            <th scope="row">Key Subjects</th>
+            <td>Data Structures, OOP, Web Technologies, Databases</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Degree</th>
+            <td>Diploma in Software Engineering</td>
+          </tr>
+          <tr>
+            <th scope="row">Institution</th>
+            <td>Zibeh Institute of Technology (ZIT)</td>
+          </tr>
+          <tr>
+            <th scope="row">Status</th>
+            <td>In Progress — Expected Graduation: September 2026</td>
+          </tr>
+          <tr>
+            <th scope="row">Started</th>
+            <td>2024</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Career Aspirations -->
+    <section id="aspirations" aria-labelledby="aspirations-heading">
+      <h2 id="aspirations-heading">Career Aspirations</h2>
+
+      <article>
+        <p>Simon&#39;s goal is to become a senior backend engineer working on enterprise software systems — the kind of infrastructure that powers banks, hospitals, ERP platforms, and large-scale SaaS products. He is drawn to system design, clean architecture, and building APIs that other developers can depend on.</p>
+
+        <p>Long term, Simon envisions leading engineering teams and contributing to software that has real-world impact across Africa and beyond. He is particularly interested in the intersection of robust backend systems and meaningful digital transformation.</p>
+      </article>
+    </section>
+
+    <!-- Technical Skills -->
+    <section id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Technical Skills</h2>
+
+      <table>
+        <caption>Technical skills by category</caption>
+        <thead>
+          <tr>
+            <th scope="col">Skill</th>
+            <th scope="col">Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>C#</td>
+            <td>Backend Development</td>
+          </tr>
+          <tr>
+            <td>ASP.NET Core</td>
+            <td>Backend Development</td>
+          </tr>
+          <tr>
+            <td>WinForms</td>
+            <td>Desktop Development</td>
+          </tr>
+          <tr>
+            <td>SQL Server</td>
+            <td>Database</td>
+          </tr>
+          <tr>
+            <td>React</td>
+            <td>Frontend Development</td>
+          </tr>
+          <tr>
+            <td>JavaScript</td>
+            <td>Frontend Development</td>
+          </tr>
+          <tr>
+            <td>TypeScript</td>
+            <td>Frontend Development</td>
+          </tr>
+          <tr>
+            <td>Git and GitHub</td>
+            <td>Version Control</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <aside aria-labelledby="exploring-heading">
+        <h3 id="exploring-heading">Currently Exploring</h3>
+        <p>Simon is currently deepening his understanding of software architecture patterns, clean code principles, and distributed systems design.</p>
+      </aside>
+    </section>
+
+    <!-- Hobbies and Interests -->
+    <section id="hobbies" aria-labelledby="hobbies-heading">
+      <h2 id="hobbies-heading">Hobbies and Interests</h2>
+      <ul>
+        <li><strong>Faith:</strong> Simon is motivated by his Christian faith, which shapes how he approaches integrity, excellence, and service in his work.</li>
+        <li><strong>Reading:</strong> He enjoys reading technical books, engineering blogs, and literature that sharpens both his thinking and his craft.</li>
+        <li><strong>Teaching:</strong> Simon finds great satisfaction in breaking down complex concepts for others, whether in a classroom setting or a one-on-one mentoring context.</li>
+        <li><strong>Technology:</strong> He is genuinely enthusiastic about the direction of software engineering and enjoys staying current with industry trends and tools.</li>
+      </ul>
+    </section>
   </main>
 
+  <!-- Footer: same structure as index.html for consistency -->
   <footer>
-    <p>&copy; 2026 Student Portfolio</p>
+    <h3>Let's Connect</h3>
+    <p>Simon is open to collaborations, internship opportunities, and conversations about backend engineering.</p>
+    <ul>
+      <li><a href="mailto:agbojisimon107@gmail.com">agbojisimon107@gmail.com</a></li>
+      <li><a href="mailto:s.agboji6825@miva.edu.ng">s.agboji6825@miva.edu.ng</a></li>
+      <li><a href="https://github.com/agbojisimon">github.com/agbojisimon</a></li>
+      <li><a href="https://www.linkedin.com/in/agboji-simon-23a0b630b">https://www.linkedin.com/in/agboji-simon-23a0b630b</a></li>
+    </ul>
+    <p>&copy; 2026 Simon Agboji. Built with semantic HTML.</p>
   </footer>
 </body>
 </html>
