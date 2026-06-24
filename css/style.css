@@ -1,0 +1,25 @@
+/*
+  css/style.css
+  Purpose: Central stylesheet for the Student Portfolio site.
+  This file is intentionally minimal; add base styles, layout, and component styles here.
+*/
+
+/* ===== Reset / Normalize ===== */
+/* Add reset rules here */
+
+/* ===== Base (colors, variables) ===== */
+:root {
+  /* --primary-color: #...; */
+}
+
+/* ===== Layout ===== */
+/* Header, nav, main, footer layout rules */
+
+/* ===== Typography ===== */
+/* Font sizes, line-height, headings */
+
+/* ===== Components ===== */
+/* Buttons, cards, forms, lists, etc. */
+
+/* ===== Utilities ===== */
+/* Helper classes like .sr-only, .container, .visually-hidden */
