@@ -1,21 +1,30 @@
 <!--
   index.html
-  Purpose: Homepage for the Student Portfolio and Academic Management Website.
-  Contains basic HTML5 structure, stylesheet link, and navigation to other pages.
+  Purpose: Semantic homepage for the Student Portfolio. This page is HTML-only
+  and provides accessible structure for the site header, navigation, hero,
+  biography, academic profile table, and footer. Styling is provided via the
+  external stylesheet at css/style.css (no inline styles here).
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Student Portfolio - Home</title>
-  <!-- Link to external stylesheet -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portfolio | Home</title>
+  <!-- Link to external stylesheet (no CSS in this file) -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Header with site navigation -->
+  <!-- Primary site header with name, subtitle, and main navigation -->
   <header>
-    <nav>
+    <div>
+      <h1>Simon Agboji</h1>
+      <p>Computer Science Student | .NET Backend Developer</p>
+      <p>Miva Open University</p>
+    </div>
+
+    <!-- Primary navigation linking to all site pages -->
+    <nav aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -26,15 +35,89 @@
     </nav>
   </header>
 
-  <!-- Main content area (placeholder) -->
   <main>
-    <h1>Welcome to the Student Portfolio</h1>
-    <p>This is the homepage. Replace this placeholder with an introduction and highlights.</p>
+    <!-- Hero section: introduction and portrait -->
+    <section id="hero" aria-labelledby="hero-heading">
+      <h2 id="hero-heading">Crafting Robust Backend Systems, One Layer at a Time.</h2>
+      <!-- One-sentence welcome positioning Simon as backend-focused -->
+      <p>Welcome — I am a backend-focused Computer Science student who builds reliable, scalable software.</p>
+
+      <!-- Portrait with caption; image file provided in images/Simon.jpeg -->
+      <figure>
+        <img src="images/Simon.jpeg" alt="Portrait of Simon Agboji" width="400">
+        <figcaption>Simon Agboji — Computer Science Student | .NET Backend Developer</figcaption>
+      </figure>
+    </section>
+
+    <!-- Biography section with article and aside for technical skills -->
+    <section id="biography" aria-labelledby="bio-heading">
+      <h2 id="bio-heading">Biography</h2>
+
+      <article aria-labelledby="story-heading">
+        <h3 id="story-heading">My Story</h3>
+        <p>Simon is a Computer Science student at Miva Open University with a strong focus on backend development and enterprise software. He works primarily with C#, ASP.NET Core, and SQL Server, and has hands-on experience building real-world web applications.</p>
+        <p>Beyond the code, Simon is passionate about faith, enjoys reading, and finds fulfilment in teaching others what he knows. He believes that clean architecture and purposeful software can genuinely solve real problems.</p>
+      </article>
+
+      <aside aria-labelledby="skills-heading">
+        <h3 id="skills-heading">Technical Skills</h3>
+        <ul>
+          <li>C#</li>
+          <li>ASP.NET Core</li>
+          <li>WinForms</li>
+          <li>React</li>
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>SQL Server</li>
+          <li>Git and GitHub</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- Academic profile table summarizing institutional details -->
+    <section aria-labelledby="academics-heading">
+      <h2 id="academics-heading">Academic Profile</h2>
+      <table>
+        <caption>Academic and programme information</caption>
+        <thead>
+          <tr>
+            <th scope="col">Detail</th>
+            <th scope="col">Information</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Institution</th>
+            <td>Miva Open University</td>
+          </tr>
+          <tr>
+            <th scope="row">Programme</th>
+            <td>B.Sc. Computer Science</td>
+          </tr>
+          <tr>
+            <th scope="row">Focus Area</th>
+            <td>Backend Development and Enterprise Software</td>
+          </tr>
+          <tr>
+            <th scope="row">Current Status</th>
+            <td>Undergraduate Student</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Footer with contact details and brief invitation to connect -->
   <footer>
-    <p>&copy; 2026 Student Portfolio</p>
+    <h3>Let's Connect</h3>
+    <p>Simon is open to collaborations, internship opportunities, and conversations about backend engineering.</p>
+    <ul>
+      <li>Email: <a href="mailto:agbojisimon107@gmail.com">agbojisimon107@gmail.com</a></li>
+      <li>Email: <a href="mailto:s.agboji6825@miva.edu.ng">s.agboji6825@miva.edu.ng</a></li>
+      <li>GitHub: <a href="https://github.com/agbojisimon">github.com/agbojisimon</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/agboji-simon-23a0b630b">linkedin.com/in/agboji-simon</a></li>
+    </ul>
+    <p>&copy; 2026 Simon Agboji... Built with semantic HTML.</p>
   </footer>
 </body>
 </html>
