@@ -1,21 +1,13 @@
-<!--
-  about.html
-  Purpose: Detailed About Me page for the Student Portfolio. This file is
-  semantic HTML only and provides structured sections for educational
-  background, career aspirations, technical skills, and personal interests.
-  Styling is provided via the external stylesheet at css/style.css.
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me | Simon Agboji</title>
-  <!-- Link to external stylesheet (no CSS here) -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Header: same structure as index.html for consistency -->
+  <!-- Header -->
   <header>
     <div>
       <h1>Simon Agboji</h1>
@@ -23,6 +15,7 @@
       <p>Miva Open University</p>
     </div>
 
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
     <nav aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -44,7 +37,7 @@
         <p><strong>Degree:</strong> Bachelor of Science in Computer Science</p>
         <p><strong>Status:</strong> Currently enrolled as an undergraduate student</p>
 
-        <p>Simon chose Computer Science because of his deep interest in how software systems are designed and how they scale, with a particular pull toward backend architecture and enterprise-grade applications. Alongside his degree at Miva Open University, Simon is also completing a Diploma in Software Engineering at Zibeh Institute of Technology (ZIT), with an expected graduation date of September 2026 — a programme he started in 2024 that has given him strong practical grounding in software development principles and engineering discipline.</p>
+        <p>I chose Computer Science because of my deep interest in how software systems are designed and how they scale, with a particular pull toward backend architecture and enterprise-grade applications. Alongside my degree at Miva Open University, I am also completing a Diploma in Software Engineering at Zibeh Institute of Technology (ZIT), with an expected graduation date of September 2026 — a programme I started in 2024 that has given me strong practical grounding in software development principles and engineering discipline.</p>
       </article>
       <h3>B.Sc. Computer Science — Miva Open University</h3>
       <table>
@@ -110,9 +103,9 @@
       <h2 id="aspirations-heading">Career Aspirations</h2>
 
       <article>
-        <p>Simon&#39;s goal is to become a senior backend engineer working on enterprise software systems — the kind of infrastructure that powers banks, hospitals, ERP platforms, and large-scale SaaS products. He is drawn to system design, clean architecture, and building APIs that other developers can depend on.</p>
+        <p>My goal is to become a senior backend engineer working on enterprise software systems — the kind of infrastructure that powers banks, hospitals, ERP platforms, and large-scale SaaS products. I am drawn to system design, clean architecture, and building APIs that other developers can depend on.</p>
 
-        <p>Long term, Simon envisions leading engineering teams and contributing to software that has real-world impact across Africa and beyond. He is particularly interested in the intersection of robust backend systems and meaningful digital transformation.</p>
+        <p>Long term, I envision leading engineering teams and contributing to software that has real-world impact across Africa and beyond. I am particularly interested in the intersection of robust backend systems and meaningful digital transformation.</p>
       </article>
     </section>
 
@@ -158,6 +151,18 @@
             <td>Frontend Development</td>
           </tr>
           <tr>
+            <td>HTML</td>
+            <td>Frontend Development</td>
+          </tr>
+          <tr>
+            <td>CSS</td>
+            <td>Frontend Development</td>
+          </tr>
+          <tr>
+            <td>Tailwind CSS</td>
+            <td>Frontend Development</td>
+          </tr>
+          <tr>
             <td>Git and GitHub</td>
             <td>Version Control</td>
           </tr>
@@ -166,7 +171,7 @@
 
       <aside aria-labelledby="exploring-heading">
         <h3 id="exploring-heading">Currently Exploring</h3>
-        <p>Simon is currently deepening his understanding of software architecture patterns, clean code principles, and distributed systems design.</p>
+        <p>I am currently deepening my understanding of software architecture patterns, clean code principles, and distributed systems design.</p>
       </aside>
     </section>
 
@@ -174,18 +179,18 @@
     <section id="hobbies" aria-labelledby="hobbies-heading">
       <h2 id="hobbies-heading">Hobbies and Interests</h2>
       <ul>
-        <li><strong>Faith:</strong> Simon is motivated by his Christian faith, which shapes how he approaches integrity, excellence, and service in his work.</li>
-        <li><strong>Reading:</strong> He enjoys reading technical books, engineering blogs, and literature that sharpens both his thinking and his craft.</li>
-        <li><strong>Teaching:</strong> Simon finds great satisfaction in breaking down complex concepts for others, whether in a classroom setting or a one-on-one mentoring context.</li>
-        <li><strong>Technology:</strong> He is genuinely enthusiastic about the direction of software engineering and enjoys staying current with industry trends and tools.</li>
+        <li><strong>Faith:</strong> I am motivated by my Christian faith, which shapes how I approach integrity, excellence, and service in my work.</li>
+        <li><strong>Reading:</strong> I enjoy reading technical books, engineering blogs, and literature that sharpens both my thinking and my craft.</li>
+        <li><strong>Teaching:</strong> I find great satisfaction in breaking down complex concepts for others, whether in a classroom setting or a one-on-one mentoring context.</li>
+        <li><strong>Technology:</strong> I am genuinely enthusiastic about the direction of software engineering and I enjoy staying current with industry trends and tools.</li>
       </ul>
     </section>
   </main>
 
-  <!-- Footer: same structure as index.html for consistency -->
+  <!-- Footer -->
   <footer>
     <h3>Let's Connect</h3>
-    <p>Simon is open to collaborations, internship opportunities, and conversations about backend engineering.</p>
+    <p>I am open to collaborations, internship opportunities, and conversations about backend engineering.</p>
     <ul>
       <li><a href="mailto:agbojisimon107@gmail.com">agbojisimon107@gmail.com</a></li>
       <li><a href="mailto:s.agboji6825@miva.edu.ng">s.agboji6825@miva.edu.ng</a></li>
@@ -194,5 +199,48 @@
     </ul>
     <p>&copy; 2026 Simon Agboji. Built with semantic HTML.</p>
   </footer>
+  <script>
+  (function () {
+    var toggle = document.getElementById('nav-toggle');
+    var navUl = document.querySelector('nav ul');
+
+    if (!toggle || !navUl) return;
+
+    var overlay = document.createElement('div');
+    overlay.style.cssText = 'display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.6);z-index:90;';
+    document.body.appendChild(overlay);
+
+    function openNav() {
+      navUl.classList.add('open');
+      overlay.style.display = 'block';
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.innerHTML = '&#10005;';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeNav() {
+      navUl.classList.remove('open');
+      overlay.style.display = 'none';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.innerHTML = '&#9776;';
+      document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      navUl.classList.contains('open') ? closeNav() : openNav();
+    });
+
+    overlay.addEventListener('click', closeNav);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeNav();
+    });
+
+    navUl.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeNav);
+    });
+  })();
+</script>
 </body>
 </html>

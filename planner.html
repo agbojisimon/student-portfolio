@@ -1,9 +1,3 @@
-<!--
-  planner.html
-  Purpose: Academic planner page for Simon Agboji. This file uses semantic
-  HTML and includes an inline JavaScript implementation for task management.
-  No CSS is included in this file; styling is provided via css/style.css.
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Header: consistent with index.html -->
+  <!-- Header -->
   <header>
     <div>
       <h1>Simon Agboji</h1>
@@ -21,6 +15,7 @@
       <p>Miva Open University</p>
     </div>
 
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
     <nav aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -33,13 +28,13 @@
   </header>
 
   <main>
-    <!-- Page Introduction -->
+    <!-- Intro -->
     <section aria-labelledby="planner-heading">
       <h2 id="planner-heading">Academic Planner</h2>
       <p>A personal task management tool to help track academic responsibilities, deadlines, and study goals.</p>
     </section>
 
-    <!-- Task Input Area -->
+    <!-- Input -->
     <section aria-labelledby="add-task-heading">
       <h2 id="add-task-heading">Add a New Task</h2>
 
@@ -60,29 +55,22 @@
       <p id="input-error" role="alert"></p>
     </section>
 
-    <!-- Task Filter Area -->
-    <section aria-labelledby="filter-heading">
-      <h2 id="filter-heading">Filter Tasks</h2>
-      <label for="filter-select">Show:</label>
-      <select id="filter-select">
-        <option value="all">All Tasks</option>
-        <option value="pending">Pending</option>
-        <option value="completed">Completed</option>
-      </select>
-    </section>
-
-    <!-- Task List Area -->
+    <!-- Tasks -->
     <section aria-labelledby="tasks-heading">
       <h2 id="tasks-heading">My Tasks</h2>
       <p id="empty-message">No tasks yet. Add one above to get started.</p>
       <ul id="task-list" aria-live="polite"></ul>
+      <section id="completed-section" aria-labelledby="completed-heading">
+        <h3 id="completed-heading">Completed Tasks</h3>
+        <ul id="completed-list" aria-live="polite"></ul>
+      </section>
     </section>
   </main>
 
-  <!-- Footer: consistent with index.html -->
+  <!-- Footer -->
   <footer>
     <h3>Let's Connect</h3>
-    <p>Simon is open to collaborations, internship opportunities, and conversations about backend engineering.</p>
+    <p>I am open to collaborations, internship opportunities, and conversations about backend engineering.</p>
     <ul>
       <li>Email: <a href="mailto:agbojisimon107@gmail.com">agbojisimon107@gmail.com</a></li>
       <li>Email: <a href="mailto:s.agboji6825@miva.edu.ng">s.agboji6825@miva.edu.ng</a></li>
@@ -92,129 +80,51 @@
     <p>&copy; 2026 Simon Agboji. Built with semantic HTML.</p>
   </footer>
 
-  <!-- Inline JavaScript implementing planner behavior -->
   <script>
-    // tasks array holds task objects: { id, text, category, completed }
-    const tasks = [];
+  (function () {
+    var toggle = document.getElementById('nav-toggle');
+    var navUl = document.querySelector('nav ul');
 
-    // Cache DOM elements
-    const taskInput = document.getElementById('task-input');
-    const taskCategory = document.getElementById('task-category');
-    const addTaskBtn = document.getElementById('add-task-btn');
-    const inputError = document.getElementById('input-error');
-    const filterSelect = document.getElementById('filter-select');
-    const taskList = document.getElementById('task-list');
-    const emptyMessage = document.getElementById('empty-message');
+    if (!toggle || !navUl) return;
 
-    function addTask() {
-      const text = taskInput.value.trim();
-      const category = taskCategory.value;
+    var overlay = document.createElement('div');
+    overlay.style.cssText = 'display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.6);z-index:90;';
+    document.body.appendChild(overlay);
 
-      if (text === '') {
-        inputError.textContent = 'Task description cannot be empty.';
-        return;
-      }
-
-      inputError.textContent = '';
-
-      const task = {
-        id: Date.now(),
-        text: text,
-        category: category,
-        completed: false
-      };
-
-      tasks.push(task);
-      taskInput.value = '';
-      renderTasks();
+    function openNav() {
+      navUl.classList.add('open');
+      overlay.style.display = 'block';
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.innerHTML = '&#10005;';
+      document.body.style.overflow = 'hidden';
     }
 
-    function renderTasks() {
-      const filter = filterSelect.value;
-
-      let filtered = tasks.slice();
-
-      if (filter === 'pending') {
-        filtered = filtered.filter(t => !t.completed);
-      } else if (filter === 'completed') {
-        filtered = filtered.filter(t => t.completed);
-      }
-
-      taskList.innerHTML = '';
-
-      if (filtered.length === 0) {
-        emptyMessage.hidden = false;
-      } else {
-        emptyMessage.hidden = true;
-      }
-
-      filtered.forEach(task => {
-        const li = createTaskElement(task);
-        taskList.appendChild(li);
-      });
+    function closeNav() {
+      navUl.classList.remove('open');
+      overlay.style.display = 'none';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.innerHTML = '&#9776;';
+      document.body.style.overflow = '';
     }
 
-    function createTaskElement(task) {
-      const li = document.createElement('li');
-      li.setAttribute('data-id', task.id);
-      if (task.completed) {
-        li.classList.add('completed');
-      }
-
-      const span = document.createElement('span');
-      span.textContent = task.text + ' ';
-
-      const small = document.createElement('small');
-      small.textContent = `(${task.category})`;
-      span.appendChild(small);
-
-      li.appendChild(span);
-
-      const completeBtn = document.createElement('button');
-      completeBtn.className = 'complete-btn';
-      completeBtn.textContent = task.completed ? 'Mark Incomplete' : 'Mark Complete';
-      completeBtn.onclick = function() { toggleComplete(task.id); };
-      li.appendChild(completeBtn);
-
-      const deleteBtn = document.createElement('button');
-      deleteBtn.className = 'delete-btn';
-      deleteBtn.textContent = 'Delete';
-      deleteBtn.onclick = function() { deleteTask(task.id); };
-      li.appendChild(deleteBtn);
-
-      return li;
-    }
-
-    function toggleComplete(id) {
-      const task = tasks.find(t => t.id === id);
-      if (!task) return;
-      task.completed = !task.completed;
-      renderTasks();
-    }
-
-    function deleteTask(id) {
-      const remaining = tasks.filter(t => t.id !== id);
-      // Clear and push remaining into tasks array without reassigning variable
-      tasks.length = 0;
-      remaining.forEach(t => tasks.push(t));
-      renderTasks();
-    }
-
-    // Event listeners
-    addTaskBtn.addEventListener('click', addTask);
-
-    taskInput.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        addTask();
-      }
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      navUl.classList.contains('open') ? closeNav() : openNav();
     });
 
-    filterSelect.addEventListener('change', renderTasks);
+    overlay.addEventListener('click', closeNav);
 
-    // Initial render to show empty state
-    renderTasks();
-  </script>
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeNav();
+    });
+
+    navUl.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeNav);
+    });
+  })();
+</script>
+  <!-- Script -->
+  <script src="js/planner.js"></script>
 
 </body>
 </html>

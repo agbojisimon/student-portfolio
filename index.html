@@ -1,21 +1,13 @@
-<!--
-  index.html
-  Purpose: Semantic homepage for the Student Portfolio. This page is HTML-only
-  and provides accessible structure for the site header, navigation, hero,
-  biography, academic profile table, and footer. Styling is provided via the
-  external stylesheet at css/style.css (no inline styles here).
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Portfolio | Home</title>
-  <!-- Link to external stylesheet (no CSS in this file) -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Primary site header with name, subtitle, and main navigation -->
+  <!-- Header -->
   <header>
     <div>
       <h1>Simon Agboji</h1>
@@ -23,7 +15,7 @@
       <p>Miva Open University</p>
     </div>
 
-    <!-- Primary navigation linking to all site pages -->
+    <!-- Nav -->
     <nav aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -33,30 +25,31 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
   </header>
 
   <main>
-    <!-- Hero section: introduction and portrait -->
+    <!-- Hero -->
     <section id="hero" aria-labelledby="hero-heading">
-      <h2 id="hero-heading">Crafting Robust Backend Systems, One Layer at a Time.</h2>
-      <!-- One-sentence welcome positioning Simon as backend-focused -->
-      <p>Welcome — I am a backend-focused Computer Science student who builds reliable, scalable software.</p>
-
-      <!-- Portrait with caption; image file provided in images/Simon.jpeg -->
+      <div class="hero-text">
+        <h2 id="hero-heading">Crafting Robust Backend Systems, One Layer at a Time.</h2>
+        <p>Welcome — I am a backend-focused Computer Science student who builds reliable, scalable software.</p>
+        <a href="assets/Agboji_Simon_CV.pdf" download="Agboji_Simon_CV.pdf" class="cta-button">Download CV</a>
+      </div>
       <figure>
         <img src="images/Simon.jpeg" alt="Portrait of Simon Agboji" width="400">
         <figcaption>Simon Agboji — Computer Science Student | .NET Backend Developer</figcaption>
       </figure>
     </section>
 
-    <!-- Biography section with article and aside for technical skills -->
+    <!-- About -->
     <section id="biography" aria-labelledby="bio-heading">
       <h2 id="bio-heading">Biography</h2>
 
       <article aria-labelledby="story-heading">
         <h3 id="story-heading">My Story</h3>
-        <p>Simon is a Computer Science student at Miva Open University with a strong focus on backend development and enterprise software. He works primarily with C#, ASP.NET Core, and SQL Server, and has hands-on experience building real-world web applications.</p>
-        <p>Beyond the code, Simon is passionate about faith, enjoys reading, and finds fulfilment in teaching others what he knows. He believes that clean architecture and purposeful software can genuinely solve real problems.</p>
+        <p>I am a Computer Science student at Miva Open University with a strong focus on backend development and enterprise software. I work primarily with C#, ASP.NET Core, and SQL Server, and have hands-on experience building real-world web applications.</p>
+        <p>Beyond the code, I am passionate about faith, I enjoy reading, and I find fulfilment in teaching others what I know. I believe that clean architecture and purposeful software can genuinely solve real problems.</p>
       </article>
 
       <aside aria-labelledby="skills-heading">
@@ -74,7 +67,7 @@
       </aside>
     </section>
 
-    <!-- Academic profile table summarizing institutional details -->
+    <!-- Profile -->
     <section aria-labelledby="academics-heading">
       <h2 id="academics-heading">Academic Profile</h2>
       <table>
@@ -102,15 +95,69 @@
             <th scope="row">Current Status</th>
             <td>Undergraduate Student</td>
           </tr>
+          <tr>
+            <th scope="row">Diploma</th>
+            <td>Diploma in Software Engineering</td>
+          </tr>
+          <tr>
+            <th scope="row">Institution</th>
+            <td>Zibeh Institute of Technology (ZIT)</td>
+          </tr>
+          <tr>
+            <th scope="row">Diploma Status</th>
+            <td>In Progress — Expected Graduation: September 2026</td>
+          </tr>
         </tbody>
       </table>
     </section>
+
+    <section id="explore" aria-labelledby="explore-heading">
+      <h2 id="explore-heading">Explore the Site</h2>
+      <div class="explore-grid">
+
+        <article class="explore-card">
+          <h3>About Me</h3>
+          <p>Learn about my educational background, career aspirations, technical skills, and personal interests.</p>
+          <a href="about.html" class="cta-button">Go to About</a>
+        </article>
+
+        <article class="explore-card">
+          <h3>Projects</h3>
+          <p>Explore the real-world software projects I have built — from a live church platform to a real estate web application.</p>
+          <a href="projects.html" class="cta-button">View Projects</a>
+        </article>
+
+        <article class="explore-card">
+          <h3>Academic Planner</h3>
+          <p>An interactive task management tool to track academic responsibilities, deadlines, and study goals.</p>
+          <a href="planner.html" class="cta-button">Open Planner</a>
+        </article>
+
+        <article class="explore-card">
+          <h3>Contact</h3>
+          <p>Interested in collaborating or have a conversation about backend engineering? I am open to opportunities.</p>
+          <a href="contact.html" class="cta-button">Get in Touch</a>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="featured-projects" aria-labelledby="featured-projects-heading">
+      <h2 id="featured-projects-heading">Featured Projects</h2>
+      <p>Selected projects are highlighted here to give a quick overview of my work.</p>
+    </section>
+
+    <section id="cta" aria-labelledby="cta-heading">
+      <h2 id="cta-heading">Ready to build something meaningful?</h2>
+      <p>Explore the rest of the portfolio to learn more about my work and experience.</p>
+      <a href="contact.html" class="cta-button">Contact me</a>
+    </section>
   </main>
 
-  <!-- Footer with contact details and brief invitation to connect -->
+  <!-- Footer -->
   <footer>
     <h3>Let's Connect</h3>
-    <p>Simon is open to collaborations, internship opportunities, and conversations about backend engineering.</p>
+    <p>I am open to collaborations, internship opportunities, and conversations about backend engineering.</p>
     <ul>
       <li>Email: <a href="mailto:agbojisimon107@gmail.com">agbojisimon107@gmail.com</a></li>
       <li>Email: <a href="mailto:s.agboji6825@miva.edu.ng">s.agboji6825@miva.edu.ng</a></li>
@@ -119,5 +166,48 @@
     </ul>
     <p>&copy; 2026 Simon Agboji... Built with semantic HTML.</p>
   </footer>
+  <script>
+  (function () {
+    var toggle = document.getElementById('nav-toggle');
+    var navUl = document.querySelector('nav ul');
+
+    if (!toggle || !navUl) return;
+
+    var overlay = document.createElement('div');
+    overlay.style.cssText = 'display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.6);z-index:90;';
+    document.body.appendChild(overlay);
+
+    function openNav() {
+      navUl.classList.add('open');
+      overlay.style.display = 'block';
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.innerHTML = '&#10005;';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeNav() {
+      navUl.classList.remove('open');
+      overlay.style.display = 'none';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.innerHTML = '&#9776;';
+      document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      navUl.classList.contains('open') ? closeNav() : openNav();
+    });
+
+    overlay.addEventListener('click', closeNav);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeNav();
+    });
+
+    navUl.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeNav);
+    });
+  })();
+</script>
 </body>
 </html>

@@ -1,9 +1,3 @@
-<!--
-  projects.html
-  Purpose: Projects showcase page for Simon Agboji. This file is semantic
-  HTML only and lists three projects with descriptions, tech stacks, links,
-  and screenshots. Header and footer match index.html for consistency.
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Header: consistent with index.html -->
+  <!-- Header -->
   <header>
     <div>
       <h1>Simon Agboji</h1>
@@ -21,6 +15,7 @@
       <p>Miva Open University</p>
     </div>
 
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
     <nav aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -33,104 +28,116 @@
   </header>
 
   <main>
-    <!-- Opening section -->
+    <!-- Intro -->
     <section aria-labelledby="projects-heading">
       <h2 id="projects-heading">Projects</h2>
-      <p>Simon builds software that solves real problems — from church management platforms to desktop business systems and real estate portals. The projects below represent work done across different domains, stacks, and contexts.</p>
+      <p>I build software that solves real problems — from church management platforms to desktop business systems and real estate portals. The projects below represent work done across different domains, stacks, and contexts.</p>
     </section>
 
-    <!-- Project 1 -->
-    <article aria-labelledby="gfm-heading">
-      <h3 id="gfm-heading">Global Flame Ministry Web Platform</h3>
-      <p><strong>Type:</strong> Fullstack Web Application</p>
-      <p><strong>Status:</strong> Live and in active development</p>
-      <p>A fully functional church management and content platform built for Global Flame Ministry, Jos, Nigeria. Simon designed and built the entire backend REST API using ASP.NET Core and PostgreSQL, and also developed the React/TypeScript frontend. The platform handles sermon management, blog publishing, event announcements, a giving and donation flow, and an admin dashboard. It is deployed on Heroku (backend) and Vercel (frontend) with Cloudflare DNS and a custom domain.</p>
-
-      <h4>Tech stack</h4>
-      <ul>
-        <li>ASP.NET Core</li>
-        <li>PostgreSQL</li>
-        <li>React</li>
-        <li>TypeScript</li>
-        <li>Tailwind CSS</li>
-        <li>Heroku</li>
-        <li>Vercel</li>
-        <li>Cloudflare</li>
-        <li>Backblaze B2</li>
-      </ul>
-
-      <h4>Links</h4>
-      <ul>
-        <li>Live Site: <a href="https://globalflameministry.org" target="_blank" rel="noopener noreferrer">globalflameministry.org</a></li>
-        <li>Frontend Repo: <a href="https://github.com/Global-Flame-Ministry/global-ministry-web" target="_blank" rel="noopener noreferrer">github.com/Global-Flame-Ministry/global-ministry-web</a></li>
-        <li>Backend Repo: <a href="https://github.com/agbojisimon/flame-youth" target="_blank" rel="noopener noreferrer">github.com/agbojisimon/flame-youth</a></li>
-      </ul>
-
+    <!-- Project 1 — GFM Backend -->
+    <article class="project-card" aria-labelledby="gfm-backend-heading">
       <figure>
-        <img src="images/gfm.png" alt="Screenshot of the Global Flame Ministry web platform" width="600">
-        <figcaption>Global Flame Ministry — web platform screenshot</figcaption>
+        <img src="images/gfm.png" alt="Screenshot of the Global Flame Ministry backend API" width="600">
+        <figcaption>Global Flame Ministry — backend API</figcaption>
       </figure>
+      <div class="project-card-header">
+        <div>
+          <span class="project-type-badge">Fullstack Web Application</span>
+          <h3 id="gfm-backend-heading">Global Flame Ministry — Backend API</h3>
+        </div>
+        <span class="project-status live">Live — Active Development</span>
+      </div>
+      <p>The backend REST API for Global Flame Ministry, built with ASP.NET Core and PostgreSQL. Handles sermon management, blog publishing, event announcements, a giving and donation flow, authentication, and an admin dashboard. Deployed on Heroku with Cloudflare DNS and a custom domain.</p>
+
+      <div>
+        <h4>Tech Stack</h4>
+        <div class="tech-stack">
+          <span class="tech-tag">ASP.NET Core</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">Entity Framework Core</span>
+          <span class="tech-tag">Heroku</span>
+          <span class="tech-tag">Cloudflare</span>
+        </div>
+      </div>
+
+      <div class="project-links">
+        <a href="https://github.com/agbojisimon/flame-youth" target="_blank" rel="noopener noreferrer" class="project-btn">Backend Repo</a>
+      </div>
     </article>
 
-    <!-- Project 2 -->
-    <article aria-labelledby="bookshop-heading">
-      <h3 id="bookshop-heading">God Knows Why Bookshop Management System</h3>
-      <p><strong>Type:</strong> Desktop Application</p>
-      <p><strong>Status:</strong> Completed</p>
-      <p>A Windows desktop application built with C# and WinForms to manage the daily operations of a bookshop. The system handles inventory tracking, sales recording, and stock management through a clean, form-based interface. It demonstrates strong understanding of object-oriented programming, data binding, and desktop UI design using the .NET ecosystem.</p>
-
-      <h4>Tech stack</h4>
-      <ul>
-        <li>C#</li>
-        <li>WinForms</li>
-        <li>.NET</li>
-        <li>SQL Server</li>
-      </ul>
-
-      <h4>Links</h4>
-      <ul>
-        <li>Repository: Local — not publicly hosted</li>
-      </ul>
-
+    <!-- Project 2 — GFM Frontend -->
+    <article class="project-card" aria-labelledby="gfm-frontend-heading">
       <figure>
-        <img src="images/bookshop.png" alt="Screenshot of the God Knows Why Bookshop Management System" width="600">
-        <figcaption>God Knows Why Bookshop Management System — screenshot</figcaption>
+        <img src="images/gfm-f.jpg" alt="Screenshot of the Global Flame Ministry frontend" width="600">
+        <figcaption>Global Flame Ministry — frontend interface</figcaption>
       </figure>
+      <div class="project-card-header">
+        <div>
+          <span class="project-type-badge">Fullstack Web Application</span>
+          <h3 id="gfm-frontend-heading">Global Flame Ministry — Frontend</h3>
+        </div>
+        <span class="project-status live">Live — Active Development</span>
+      </div>
+      <p>The React/TypeScript frontend for Global Flame Ministry. Built with Tailwind CSS and deployed on Vercel. Consumes the backend REST API to display sermons, blog posts, events, and the giving flow. Includes a fully functional admin interface.</p>
+
+      <div>
+        <h4>Tech Stack</h4>
+        <div class="tech-stack">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">Tailwind CSS</span>
+          <span class="tech-tag">Vercel</span>
+          <span class="tech-tag">Backblaze B2</span>
+        </div>
+      </div>
+
+      <div class="project-links">
+        <a href="https://globalflameministry.org" target="_blank" rel="noopener noreferrer" class="project-btn">Visit Live Site</a>
+        <a href="https://github.com/Global-Flame-Ministry/global-ministry-web" target="_blank" rel="noopener noreferrer" class="project-btn">Frontend Repo</a>
+      </div>
     </article>
 
-    <!-- Project 3 -->
-    <article aria-labelledby="pipdc-heading">
-      <h3 id="pipdc-heading">PIPDC — Plateau Investment and Property Development Company</h3>
-      <p><strong>Type:</strong> Fullstack Web Application</p>
-      <p><strong>Status:</strong> In Progress</p>
-      <p>A fullstack real estate web platform being developed for Plateau Investment and Property Development Company (PIPDC). The platform is designed to showcase property listings, handle client enquiries, and provide an admin interface for managing real estate inventory. Simon is building both the backend API and the frontend interface, applying the same architectural discipline used in the GFM platform.</p>
-
-      <h4>Tech stack</h4>
-      <ul>
-        <li>ASP.NET Core</li>
-        <li>React</li>
-        <li>TypeScript</li>
-        <li>SQL Server</li>
-        <li>Tailwind CSS</li>
-      </ul>
-
-      <h4>Links</h4>
-      <ul>
-        <li>Repository: <a href="https://github.com/agbojisimon/PIPDC" target="_blank" rel="noopener noreferrer">github.com/agbojisimon/PIPDC</a></li>
-        <li>Live Site: Not yet deployed — currently in active development</li>
-      </ul>
-
+    <!-- Project 3 — PIPDC -->
+    <article class="project-card" aria-labelledby="pipdc-heading">
       <figure>
         <img src="images/pipdc.png" alt="Screenshot of the PIPDC real estate platform" width="600">
         <figcaption>PIPDC — real estate platform screenshot</figcaption>
       </figure>
+      <div class="project-card-header">
+        <div>
+          <span class="project-type-badge">Fullstack Web Application</span>
+          <h3 id="pipdc-heading">PIPDC — Plateau Investment and Property Development Company</h3>
+        </div>
+        <span class="project-status in-progress">In Progress</span>
+      </div>
+      <p>A fullstack real estate web platform being developed for Plateau Investment and Property Development Company (PIPDC). The platform is designed to showcase property listings, handle client enquiries, and provide an admin interface for managing real estate inventory. I am building both the backend API and the frontend interface, applying the same architectural discipline used in the GFM platform.</p>
+
+      <div>
+        <h4>Tech Stack</h4>
+        <div class="tech-stack">
+          <span class="tech-tag">ASP.NET Core</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">SQL Server</span>
+          <span class="tech-tag">Tailwind CSS</span>
+        </div>
+      </div>
+
+      <div class="project-links">
+        <a href="https://github.com/agbojisimon/PIPDC" target="_blank" rel="noopener noreferrer" class="project-btn">View Repo</a>
+        <span class="project-btn-disabled">
+          Live site not yet deployed
+        </span>
+      </div>
+
+      <p>Live site not yet deployed — currently in active development.</p>
     </article>
   </main>
 
-  <!-- Footer: consistent with index.html -->
+  <!-- Footer -->
   <footer>
     <h3>Let's Connect</h3>
-    <p>Simon is open to collaborations, internship opportunities, and conversations about backend engineering.</p>
+    <p>I am open to collaborations, internship opportunities, and conversations about backend engineering.</p>
     <ul>
       <li><a href="mailto:agbojisimon107@gmail.com">agbojisimon107@gmail.com</a></li>
       <li><a href="mailto:s.agboji6825@miva.edu.ng">s.agboji6825@miva.edu.ng</a></li>
@@ -139,6 +146,49 @@
     </ul>
     <p>&copy; 2026 Simon Agboji. Built with semantic HTML.</p>
   </footer>
+  <script>
+  (function () {
+    var toggle = document.getElementById('nav-toggle');
+    var navUl = document.querySelector('nav ul');
+
+    if (!toggle || !navUl) return;
+
+    var overlay = document.createElement('div');
+    overlay.style.cssText = 'display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.6);z-index:90;';
+    document.body.appendChild(overlay);
+
+    function openNav() {
+      navUl.classList.add('open');
+      overlay.style.display = 'block';
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.innerHTML = '&#10005;';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeNav() {
+      navUl.classList.remove('open');
+      overlay.style.display = 'none';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.innerHTML = '&#9776;';
+      document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      navUl.classList.contains('open') ? closeNav() : openNav();
+    });
+
+    overlay.addEventListener('click', closeNav);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeNav();
+    });
+
+    navUl.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeNav);
+    });
+  })();
+</script>
 </body>
 </html>
 
