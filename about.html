@@ -28,8 +28,22 @@
   </header>
 
   <main>
+    <!-- Hero -->
+    <section class="about-hero reveal">
+      <figure>
+        <div class="img-wrapper">
+          <img src="images/Simon.jpeg" alt="Portrait of Simon Agboji" width="400">
+        </div>
+        <figcaption>Simon Agboji — Computer Science Student | .NET Backend Developer</figcaption>
+      </figure>
+      <div>
+        <h2>About Me</h2>
+        <p>Computer Science student at Miva Open University, focused on backend development, enterprise software, and building real-world applications.</p>
+      </div>
+    </section>
+
     <!-- Educational Background -->
-    <section id="education" aria-labelledby="education-heading">
+    <section id="education" aria-labelledby="education-heading" class="reveal">
       <h2 id="education-heading">Educational Background</h2>
 
       <article>
@@ -99,7 +113,7 @@
     </section>
 
     <!-- Career Aspirations -->
-    <section id="aspirations" aria-labelledby="aspirations-heading">
+    <section id="aspirations" aria-labelledby="aspirations-heading" class="reveal">
       <h2 id="aspirations-heading">Career Aspirations</h2>
 
       <article>
@@ -110,7 +124,7 @@
     </section>
 
     <!-- Technical Skills -->
-    <section id="skills" aria-labelledby="skills-heading">
+    <section id="skills" aria-labelledby="skills-heading" class="reveal">
       <h2 id="skills-heading">Technical Skills</h2>
 
       <table>
@@ -176,7 +190,7 @@
     </section>
 
     <!-- Hobbies and Interests -->
-    <section id="hobbies" aria-labelledby="hobbies-heading">
+    <section id="hobbies" aria-labelledby="hobbies-heading" class="reveal">
       <h2 id="hobbies-heading">Hobbies and Interests</h2>
       <ul>
         <li><strong>Faith:</strong> I am motivated by my Christian faith, which shapes how I approach integrity, excellence, and service in my work.</li>
@@ -201,6 +215,7 @@
     </address>
     <p><small>&copy; <time id="current-year">2026</time> Simon Agboji. Built with Semantic HTML, CSS &amp; Javascript.</small></p>
   </footer>
+  <script src="js/animations.js"></script>
   <script>
   (function () {
     var toggle = document.getElementById('nav-toggle');

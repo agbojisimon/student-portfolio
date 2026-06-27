@@ -29,13 +29,13 @@
 
   <main>
     <!-- Intro -->
-    <section aria-labelledby="planner-heading">
+    <section aria-labelledby="planner-heading" class="reveal">
       <h2 id="planner-heading">Academic Planner</h2>
       <p>A personal task management tool to help track academic responsibilities, deadlines, and study goals.</p>
     </section>
 
     <!-- Input -->
-    <section aria-labelledby="add-task-heading">
+    <section aria-labelledby="add-task-heading" class="reveal reveal-delay-1">
       <h2 id="add-task-heading">Add a New Task</h2>
 
       <label for="task-input">Task description:</label>
@@ -56,7 +56,7 @@
     </section>
 
     <!-- Tasks -->
-    <section aria-labelledby="tasks-heading">
+    <section aria-labelledby="tasks-heading" class="reveal reveal-delay-2">
       <h2 id="tasks-heading">My Tasks</h2>
       <p id="empty-message">No tasks yet. Add one above to get started.</p>
       <ul id="task-list" aria-live="polite"></ul>
@@ -82,6 +82,7 @@
     <p><small>&copy; <time id="current-year">2026</time> Simon Agboji. Built with Semantic HTML, CSS &amp; Javascript.</small></p>
   </footer>
 
+  <script src="js/animations.js"></script>
   <script>
   (function () {
     var toggle = document.getElementById('nav-toggle');

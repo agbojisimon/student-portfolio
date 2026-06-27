@@ -30,29 +30,31 @@
 
   <main>
     <!-- Hero -->
-    <section id="hero" aria-labelledby="hero-heading">
+    <section id="hero" aria-labelledby="hero-heading" class="reveal">
       <div class="hero-text">
         <h2 id="hero-heading">Crafting Robust Backend Systems, One Layer at a Time.</h2>
         <p>Welcome — I am a backend-focused Computer Science student who builds reliable, scalable software.</p>
         <a href="assets/Agboji_Simon_Agboji_CV.pdf" download="Agboji_Simon_Agboji_CV.pdf" class="cta-button">Download CV</a>
       </div>
       <figure>
-        <img src="images/Simon.jpeg" alt="Portrait of Simon Agboji" width="400">
+        <div class="img-wrapper">
+          <img src="images/Simon.jpeg" alt="Portrait of Simon Agboji" width="400">
+        </div>
         <figcaption>Simon Agboji — Computer Science Student | .NET Backend Developer</figcaption>
       </figure>
     </section>
 
     <!-- About -->
-    <section id="biography" aria-labelledby="bio-heading">
+    <section id="biography" aria-labelledby="bio-heading" class="reveal">
       <h2 id="bio-heading">Biography</h2>
 
-      <article aria-labelledby="story-heading">
+      <article aria-labelledby="story-heading" class="reveal reveal-delay-1">
         <h3 id="story-heading">My Story</h3>
         <p>I am a Computer Science student at Miva Open University with a strong focus on backend development and enterprise software. I work primarily with C#, ASP.NET Core, and SQL Server, and have hands-on experience building real-world web applications.</p>
         <p>Beyond the code, I am passionate about faith, I enjoy reading, and I find fulfilment in teaching others what I know. I believe that clean architecture and purposeful software can genuinely solve real problems.</p>
       </article>
 
-      <aside aria-labelledby="skills-heading">
+      <aside aria-labelledby="skills-heading" class="reveal reveal-delay-2">
         <h3 id="skills-heading">Technical Skills</h3>
         <ul>
           <li>C#</li>
@@ -68,7 +70,7 @@
     </section>
 
     <!-- Profile -->
-    <section aria-labelledby="academics-heading">
+    <section aria-labelledby="academics-heading" class="reveal">
       <h2 id="academics-heading">Academic Profile</h2>
       <table>
         <caption>Academic and programme information</caption>
@@ -111,29 +113,29 @@
       </table>
     </section>
 
-    <section id="explore" aria-labelledby="explore-heading">
+    <section id="explore" aria-labelledby="explore-heading" class="reveal">
       <h2 id="explore-heading">Explore the Site</h2>
       <div class="explore-grid">
 
-        <article class="explore-card">
+        <article class="explore-card reveal reveal-delay-1">
           <h3>About Me</h3>
           <p>Learn about my educational background, career aspirations, technical skills, and personal interests.</p>
           <a href="about.html" class="cta-button">Go to About</a>
         </article>
 
-        <article class="explore-card">
+        <article class="explore-card reveal reveal-delay-1">
           <h3>Projects</h3>
           <p>Explore the real-world software projects I have built — from a live church platform to a real estate web application.</p>
           <a href="projects.html" class="cta-button">View Projects</a>
         </article>
 
-        <article class="explore-card">
+        <article class="explore-card reveal reveal-delay-2">
           <h3>Academic Planner</h3>
           <p>An interactive task management tool to track academic responsibilities, deadlines, and study goals.</p>
           <a href="planner.html" class="cta-button">Open Planner</a>
         </article>
 
-        <article class="explore-card">
+        <article class="explore-card reveal reveal-delay-2">
           <h3>Contact</h3>
           <p>Interested in collaborating or have a conversation about backend engineering? I am open to opportunities.</p>
           <a href="contact.html" class="cta-button">Get in Touch</a>
@@ -142,12 +144,7 @@
       </div>
     </section>
 
-    <section id="featured-projects" aria-labelledby="featured-projects-heading">
-      <h2 id="featured-projects-heading">Featured Projects</h2>
-      <p>Selected projects are highlighted here to give a quick overview of my work.</p>
-    </section>
-
-    <section id="cta" aria-labelledby="cta-heading">
+    <section id="cta" aria-labelledby="cta-heading" class="reveal">
       <h2 id="cta-heading">Ready to build something meaningful?</h2>
       <p>Explore the rest of the portfolio to learn more about my work and experience.</p>
       <a href="contact.html" class="cta-button">Contact me</a>
@@ -168,6 +165,7 @@
     </address>
     <p><small>&copy; <time id="current-year">2026</time> Simon Agboji. Built with Semantic HTML, CSS &amp; Javascript.</small></p>
   </footer>
+  <script src="js/animations.js"></script>
   <script>
   (function () {
     var toggle = document.getElementById('nav-toggle');
