@@ -933,6 +933,40 @@ footer a {
 
 footer a:hover { color: var(--color-text); }
 
+footer address {
+  font-style: normal;
+}
+
+footer small {
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  color: var(--color-accent);
+  border: 1px solid transparent;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.social-icon:hover {
+  color: var(--color-text);
+  background-color: var(--color-surface-high);
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+}
+
+.social-icon svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  fill: currentColor;
+}
+
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(18px); }
   to { opacity: 1; transform: translateY(0); }
