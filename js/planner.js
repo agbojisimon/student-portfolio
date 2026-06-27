@@ -9,7 +9,11 @@ const completedList = document.getElementById('completed-list');
 const completedSection = document.getElementById('completed-section');
 
 // tasks array holds task objects: { id, text, category, completed }
-const tasks = [];
+let tasks = [];
+
+function saveTasks() {
+  localStorage.setItem('planner_tasks', JSON.stringify(tasks));
+}
 
 function addTask() {
   const text = taskInput.value.trim();
@@ -28,6 +32,7 @@ function addTask() {
   tasks.push(task);
   taskInput.value = '';
   renderTasks();
+  saveTasks();
 }
 
 function renderTasks() {
@@ -84,6 +89,7 @@ function toggleComplete(id) {
   if (!task) return;
   task.completed = !task.completed;
   renderTasks();
+  saveTasks();
 }
 
 function deleteTask(id) {
@@ -91,7 +97,21 @@ function deleteTask(id) {
   tasks.length = 0;
   remaining.forEach(t => tasks.push(t));
   renderTasks();
+  saveTasks();
 }
+
+// Load tasks from localStorage on page load
+(function loadTasks() {
+  const stored = localStorage.getItem('planner_tasks');
+  if (stored) {
+    try {
+      tasks = JSON.parse(stored);
+    } catch (e) {
+      tasks = [];
+    }
+  }
+  renderTasks();
+})();
 
 addTaskBtn.addEventListener('click', addTask);
 
@@ -101,5 +121,3 @@ taskInput.addEventListener('keydown', function(e) {
     addTask();
   }
 });
-
-renderTasks();
